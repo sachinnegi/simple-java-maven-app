@@ -1,15 +1,19 @@
 pipeline {
     agent {
-        label: 'agent1'
+        label 'agent1'
     }
 
     stages {
         stage("echo Hello") {
-            sh 'hello from sachin'
+            steps {
+                sh 'hello from sachin'
+            }
         }
 
         stage("maven version") {
-            sh 'mvn --vresion'
+            steps {
+                sh 'mvn --vresion'
+            }
         }
     }
 }
