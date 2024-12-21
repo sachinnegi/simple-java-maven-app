@@ -9,11 +9,19 @@ pipeline {
                 sh 'echo "hello from sachin"'
             }
         }
-
         stage("maven version") {
             steps {
-                sh 'mvn --vresion'
+                sh 'mvn --version'
             }
         }
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
     }
 }
