@@ -1,12 +1,12 @@
 pipeline {
     agent {
-        label 'agent1'
+        label 'Docker-build-agent-1'
     }
 
     stages {
         stage("echo Hello") {
             steps {
-                sh 'hello from sachin'
+                sh 'echo "hello from sachin"'
             }
         }
 
